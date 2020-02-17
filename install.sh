@@ -3,8 +3,8 @@
 
 set -xv
 
-home_dir=/var/lib/jenkins/workspace/EKS-Demo-Infra/infra
-cd $home_dir
+home_dir=/var/lib/jenkins/workspace/Demo-Infra
+cd $home_dir/src
 sudo /usr/bin/terraform init;
 sudo /usr/bin/terraform plan;
 sudo /usr/bin/terraform apply -auto-approve;
