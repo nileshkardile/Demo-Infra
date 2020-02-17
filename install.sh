@@ -3,8 +3,7 @@
 
 set -xv
 
-home_dir=/var/lib/jenkins/workspace/Demo-Infra
-cd $home_dir/src
+cd $home/src
 
 # create infra using terraform
 sudo /usr/bin/terraform init;
