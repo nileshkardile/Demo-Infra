@@ -25,7 +25,7 @@ pipeline {
     }
      stage('Plan') {
       steps{
-       		sh 'cd $infra_home/src ; sudo /usr/bin/terraform plan'
+       		sh 'cd /var/lib/jenkins/workspace/Infra_Demo-Infra-Pipeline_master/src  ; sudo /usr/bin/terraform plan'
                       
       }
     }
@@ -33,7 +33,7 @@ pipeline {
     stage('Apply') {
       steps{
        		
-		sh 'cd $infra_home/src ; sudo /usr/bin/terraform apply -auto-approve'      
+		sh 'cd /var/lib/jenkins/workspace/Infra_Demo-Infra-Pipeline_master/src ; sudo /usr/bin/terraform apply -auto-approve'      
       }
     }  
   }
