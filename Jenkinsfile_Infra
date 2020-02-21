@@ -15,7 +15,7 @@ pipeline {
        
        sh '''#!/bin/bash
 				# This script is used to provision aws resources using terraform.
-				export infra_home=/var/lib/jenkins/workspace/_Demo-Infra-Pipeline_master
+				export infra_home=/var/lib/jenkins/workspace/Infra_Demo-Infra-Pipeline_master
 				cd $infra_home
 				cd $home/src
 
