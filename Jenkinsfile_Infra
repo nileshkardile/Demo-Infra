@@ -16,11 +16,8 @@ pipeline {
        sh '''#!/bin/bash
 				# This script is used to provision aws resources using terraform.
 				export infra_home=/var/lib/jenkins/workspace/Infra_Demo-Infra-Pipeline_master
-				cd $infra_home
-				cd $home/src
-
-				echo $home/src
-	
+				cd $infra_home/src
+				sudo /usr/bin/terraform init;
 						
                '''
         
@@ -28,15 +25,15 @@ pipeline {
     }
      stage('Plan') {
       steps{
-       		echo "Plan..."
+       		sh 'cd $infra_home/src ; sudo /usr/bin/terraform plan'
                       
       }
     }
     
     stage('Apply') {
       steps{
-       		echo "Applied..."
-                      
+       		
+		sh 'cd $infra_home/src ; sudo /usr/bin/terraform apply -auto-approve'      
       }
     }  
   }
