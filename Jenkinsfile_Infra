@@ -19,7 +19,7 @@ pipeline {
 				cd $infra_home
 				cd $home/src
 
-
+				echo $home/src
 	
 						
                '''
