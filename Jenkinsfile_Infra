@@ -6,7 +6,7 @@ pipeline {
     
     stage('Checkout') {
       steps {
-        git 'https://github.com/nileshkardile/Demo-App.git'
+        git 'https://github.com/nileshkardile/Demo-Infra.git'
       }
     }
    
