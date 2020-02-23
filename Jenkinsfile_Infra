@@ -15,8 +15,12 @@ pipeline {
        
        sh '''#!/bin/bash
 				# This script is used to provision aws resources using terraform.
-				echo $JOB_BASE_NAME;
-				echo $JENKINS_HOME;
+				#Below env variables are used for testing purpose and will  be removed.
+				
+				echo "Branch = $JOB_BASE_NAME";
+				echo " Jenkins Home = $JENKINS_HOME";
+				echo " Workspace = ${env.WORKSPACE}";
+				
 				export infra_home=/var/lib/jenkins/workspace/Infra_Demo-Infra-Pipeline_master
 				cd $infra_home/src
 				sudo /usr/bin/terraform init;
