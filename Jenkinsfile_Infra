@@ -2,6 +2,12 @@ pipeline {
 
     agent any
   
+  environment {
+   	
+	def dir_path = env.JOB_BASE_NAME
+
+
+  }
    stages {
     
     stage('Checkout') {
@@ -15,6 +21,8 @@ pipeline {
        
        sh '''#!/bin/bash
 				# This script is used to provision aws resources using terraform.
+				echo $dir_path;
+				echo $JENKINS_HOME;
 				export infra_home=/var/lib/jenkins/workspace/Infra_Demo-Infra-Pipeline_master
 				cd $infra_home/src
 				sudo /usr/bin/terraform init;
