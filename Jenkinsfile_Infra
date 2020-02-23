@@ -19,7 +19,7 @@ pipeline {
 				
 				echo "Branch = $JOB_BASE_NAME";
 				echo " Jenkins Home = $JENKINS_HOME";
-				echo " Workspace = ${env.WORKSPACE}";
+				echo " Workspace = ${WORKSPACE}";
 				
 				export infra_home=/var/lib/jenkins/workspace/Infra_Demo-Infra-Pipeline_master
 				cd $infra_home/src
